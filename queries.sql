@@ -43,6 +43,8 @@ SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
 COMMIT;
 
+-- queries using aggregate functions
+
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(escape_attempts) FROM animals
 WHERE escape_attempts = 0;
@@ -54,3 +56,34 @@ GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species;
+
+
+-- Queries using JOIN
+
+SELECT name FROM animals 
+JOIN owners ON animals.owner_id = owners.id
+WHERE full_name = 'Melody Pond';
+
+SELECT * FROM animals 
+JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+SELECT name, owner_id, full_name  FROM animals 
+RIGHT JOIN owners ON animals.owner_id = owners.id;
+
+SELECT species.name, COUNT(animals.name) FROM animals 
+JOIN species ON animals.species_id = species.id
+GROUP BY species.name;
+
+SELECT animals.name AS animal_name, owner_id, full_name, species.name AS species_name FROM animals
+JOIN owners ON animals.owner_id = owners.id
+JOIN species ON animals.species_id = species.id 
+WHERE species_id = (SELECT id FROM species WHERE name = 'Digimon') AND full_name = 'Jennifer Orwell';
+
+SELECT owner_id, animals.name AS animal_name ,escape_attempts, full_name FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE escape_attempts = 0 AND full_name = 'Dean Winchester';
+
+SELECT full_name , COUNT(animals.name) AS animal_count FROM animals 
+JOIN owners ON animals.owner_id = owners.id
+GROUP BY full_name ORDER BY COUNT(*) DESC LIMIT 1;
