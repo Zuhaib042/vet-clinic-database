@@ -30,3 +30,26 @@ ON DELETE CASCADE;
 ALTER TABLE animals
 ADD COLUMN owner_id INT REFERENCES owners(id)
 ON DELETE CASCADE;
+
+
+CREATE TABLE vets(
+    id     SERIAL         PRIMARY KEY,
+    name   VARCHAR(200)   NOT NULL,
+    age    INT            NOT NULL,
+    date_of_graduation    DATE NOT NULL
+);
+
+-- TABLES JOIN
+
+-- link table 1
+CREATE TABLE specializations(
+   species_id INT REFERENCES species(id),
+   vets_id INT REFERENCES   vets(id)
+);
+
+-- link table 2
+CREATE TABLE visits(
+    vets_id INT REFERENCES vets(id),
+    animals_id INT REFERENCES animals(id),
+    date_visit DATE NOT NULL
+);
