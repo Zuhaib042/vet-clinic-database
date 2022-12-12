@@ -53,3 +53,15 @@ CREATE TABLE visits(
     animals_id INT REFERENCES animals(id),
     date_visit DATE NOT NULL
 );
+
+
+-- For the purpose of performance-audit
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+CREATE INDEX visits_animals_id_asc ON visits(animals_id ASC);
+
+CREATE INDEX visits_vets_id_asc ON visits(vets_id ASC);
+
+CREATE INDEX owners_emails_asc ON owners(email ASC);
