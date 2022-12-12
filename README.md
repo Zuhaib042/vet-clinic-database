@@ -82,6 +82,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@Zuhaib042](https://twitter.com/Zuhaib042)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zuhaib-amjad-488914234/)
 
+👤 **Author2**
+
+- GitHub: [GitHub](https://github.com/Okechukwu-muokwugwo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okeimuokwugwo/)
+- Twitter: [Twitter](https://twitter.com/excel4eva)
+
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
