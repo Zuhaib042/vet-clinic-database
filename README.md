@@ -37,7 +37,7 @@
 
 **[Vet-Clinic Database]** is a beginner PostgreSql project where I created a database and then filled it table data. You can create Table with schema and then insert data into the table with the methods mentioned and then get the specific data with multiple queries.
 
-### Database Schema Diagram
+### Database Schema Diagram vet-clinic database
 
 ![drawSQL-export-2022-12-13_15_42](https://user-images.githubusercontent.com/96683843/207297192-fe604013-69bf-4763-9c6f-7c19d0f54303.png)
 
